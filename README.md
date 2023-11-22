@@ -76,6 +76,10 @@ This module focuses on creating and analyzing bipartite graphs for 1% and 10% sa
 8.	Visualizing the 10% Sample Bipartite Graph:
 -	The code visualizes the bipartite graph for the 10% sample using matplotlib, with nodes representing authors and genres, and edges representing connections between them. Weights are displayed on the edges.
 
+### Author-Genre Edge Weight Computation
+- Say there is an author A1 who has written books B111, B112, and B113 of genre G1.  
+- The bipartite graph will therefore include an edge <A1,G1>. 
+- In the dataset each book has a book rating, book rating count and book review count. In order to estimate the overall rating that people would give for the A1-G1 pair, I will compute the weighted average of the book ratings for B111, B112 and B113, where the weights will be the averages of the corresponding book rating counts and book review counts.
 <table>
   <tr>
     <th>Book</th>
@@ -106,4 +110,6 @@ This module focuses on creating and analyzing bipartite graphs for 1% and 10% sa
     <td>BW113 = (RC113+ReC113)/2</td>
   </tr>
 </table>
-
+```math 
+Rating(a,g) =  (R111*BW111 + R112*BW112 + R113*BW113)/(BW111 + BW112 + BW113)
+```
