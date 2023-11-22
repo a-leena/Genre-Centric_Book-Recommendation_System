@@ -76,5 +76,34 @@ This module focuses on creating and analyzing bipartite graphs for 1% and 10% sa
 8.	Visualizing the 10% Sample Bipartite Graph:
 -	The code visualizes the bipartite graph for the 10% sample using matplotlib, with nodes representing authors and genres, and edges representing connections between them. Weights are displayed on the edges.
 
-
+<table>
+  <tr>
+    <th>Book</th>
+    <th>Book Rating</th>
+    <th>Book Rating Count</th>
+    <th>Book Review Count</th>
+    <th>Book Weight</th>
+  </tr>
+  <tr>
+    <td>B111</td>
+    <td>R111</td>
+    <td>RC111</td>
+    <td>ReC111</td>
+    <td>BW111 = (RC111+ReC111)/2</td>
+  </tr>
+  <tr>
+    <td>B112</td>
+    <td>R112</td>
+    <td>RC112</td>
+    <td>ReC112</td>
+    <td>BW112 = (RC112+ReC112)/2</td>
+  </tr>
+  <tr>
+    <td>B113</td>
+    <td>R113</td>
+    <td>RC113</td>
+    <td>ReC113</td>
+    <td>BW113 = (RC113+ReC113)/2</td>
+  </tr>
+</table>
 
