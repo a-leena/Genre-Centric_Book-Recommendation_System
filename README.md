@@ -110,7 +110,5 @@ This module focuses on creating and analyzing bipartite graphs for 1% and 10% sa
     <td>BW113 = (RC113+ReC113)/2</td>
   </tr>
 </table>
-</br>
-$$ Rating(a,g) =  {(R111*BW111 + R112*BW112 + R113*BW113)} \over {(BW111 + BW112 + BW113)} $$
-</br>
-$\sqrt{3x-1}+(1+x)^2$
+
+[](https://latex.codecogs.com/png.latex?%5Cdpi%7B300%7D%20%5Cbg_white%20Rating%28a%2Cg%29%3D%20%5Cfrac%7BR111*BW111%20&plus;%20R112*BW112%20&plus;%20R113*BW113%7D%7BBW111%20&plus;%20BW112%20&plus;%20BW113%7D)
