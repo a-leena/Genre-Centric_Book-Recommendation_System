@@ -3,3 +3,78 @@ In this project a comprehensive Book-dataset is analyzed to uncover the relation
 
 ## Dataflow diagram of the system
 <img src="/SIN Project DFD.jpeg"></br></br>
+
+## Implementation of Modules
+### Data Preprocessing Module 
+This module cleans and preprocesses a dataset of book data, handling missing values, converting data types, filtering out non-English content, and processing genres before saving the processed data to a new CSV file.
+1.	Loading the Dataset:
+-	The code begins by importing necessary libraries, such as pandas and numpy.
+-	It loads a dataset from a CSV file ("My_Book_data.csv") into a Pandas DataFrame (df).
+-	Initial exploratory data analysis is done using `head()`, `shape`, `size`, `info()`, and `columns` to understand the structure and content of the dataset.
+
+2.	Filtering Columns:
+-	The code defines a list of columns to keep (`filter_cols`) and removes the columns not in this list from the DataFrame.
+-	Unimportant columns such as book_description, book_edition, book_format, book_isbn, image_url are filtered out.
+-	The resulting DataFrame (`df_filtered`) is displayed, and its information is printed.
+
+3.	Handling Missing Values: 
+-	Rows with missing values are removed from `df_filtered` using `dropna()`.
+
+4.	Processing 'book_pages' Column:
+-	The 'book_pages' column, initially of object type, is converted to integers after removing the "pages" suffix from each element.
+
+5.	Handling Multiple Authors:
+-	Some cells in the 'book_authors' column have multiple authors separated by "|". The code defines a function (`removeMultipleAuthors`) to remove rows with multiple authors.
+
+6.	Language Filtering:
+-	Two functions (`is_english` and `removeOtherLangs`) are defined to filter out rows where 'book_authors' or 'book_title' are not in English.
+-	Rows with non-English content are removed from the DataFrame.
+
+7.	Genres Processing:
+-	The 'genres' column, initially containing pipe-separated strings, is converted to lists using the `changeDelimiter` function.
+-	Duplicate genres within each row are removed, and the lists are sorted.
+-	The processed lists are converted back to strings and assigned to the 'genres' column.
+
+8.	Saving Processed DataFrame:
+-	The processed DataFrame is saved to a new CSV file ("Processed_BookData.csv") using `to_csv()`.
+
+9.	Final Output:
+-	The code displays a subset of the processed DataFrame for examination (`df_filtered[1:len(df_filtered):2000]`).
+
+### Network Construction Module
+This module focuses on creating and analyzing bipartite graphs for 1% and 10% samples of the processed book dataset. It calculates weights based on various metrics and visualizes the resulting graphs, providing insights into the relationships between authors and genres in the sampled data.
+1.	Loading the Processed Dataset:
+-	The code begins by importing necessary libraries: pandas, networkx, matplotlib, random, and pickle.
+-	It loads a previously processed dataset from a CSV file ("Processed_BookData.csv") into a Pandas DataFrame (df).
+
+2.	Identifying Unique Genres:
+-	The code extracts unique genres from the 'genres' column in the DataFrame, creating a set (`genreList`).
+-	The total number of unique genres is printed.
+
+3.	Sampling 1% of the Dataset:
+-	A 1% sample of the dataset (`df_1_sample`) is created for testing purposes using random sampling.
+-	The genres column is transformed into a list of genres.
+
+4.	Creating a Bipartite Graph for 1% Sample:
+-	A bipartite graph (`B_1_sample`) is created using NetworkX.
+-	Nodes are added for authors and genres.
+-	Edges are added with weights calculated based on specified metrics, including ratings, rating counts, review counts, and probabilities.
+-	The resulting graph is saved using the `writeGraph` function.
+
+5.	Visualizing the 1% Sample Bipartite Graph:
+-	The code visualizes the bipartite graph using matplotlib, with nodes representing authors and genres, and edges representing connections between them. Weights are displayed on the edges.
+
+6.	Sampling 10% of the Dataset:
+-	A 10% sample of the dataset (`df_10`) is created for further analysis using random sampling.
+-	Similar to the 1% sample, the genres column is transformed into a list of genres.
+
+7.	Creating a Bipartite Graph for 10% Sample:
+-	A new bipartite graph (`B_10`) is created for the 10% sample.
+-	Nodes, edges, and weights are added similar to the process for the 1% sample.
+-	The resulting graph is saved using the `writeGraph` function.
+
+8.	Visualizing the 10% Sample Bipartite Graph:
+-	The code visualizes the bipartite graph for the 10% sample using matplotlib, with nodes representing authors and genres, and edges representing connections between them. Weights are displayed on the edges.
+
+
+
