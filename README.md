@@ -124,7 +124,7 @@ Let the,
 - number of books written by author A1 of genre G1 be C11, and 
 - total number of books written by author A1 be CA1. 
 Then,
-  /br><img src="/Equations/eq3.png"></br>
+</br><img src="/Equations/eq3.png"></br>
 Therefore, in general - 
 </br><img src="/Equations/eq4.png"></br></br>
 2.	PGA(g,a): Probability of finding a book of genre G1 which is written by author A1.
