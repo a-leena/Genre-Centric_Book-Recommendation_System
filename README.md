@@ -111,3 +111,14 @@ This module focuses on creating and analyzing bipartite graphs for 1% and 10% sa
   </tr>
 </table>
 <img src="/Equations/eq1.png"></br>
+Therefore, in general - 
+<img src="/Equations/eq2.png"></br>
+where, * nag * is the number of books written by author a of genre g.
+The author A1 would have also written several other books B121, B131, and more, of other genres G2, G3, and so on. 
+Similarly, there will be several other books B211, B311, and more, of genre G1 which have been written by other authors A2, A3, and so on.
+Hence, in order to compute the probability of seeing an A1G1 pair in the dataset, I will calculate a Joint Probability, which will be the product of 2 probabilities (assuming the 2 probabilities as being independent of each other) –
+1.	PAG(a,g): Probability of finding a book written by an author a which has the genre g. 
+Let the, 
+•	number of books written by author A1 of genre G1 be C11, and 
+•	total number of books written by author A1 be CA1. 
+Then,
