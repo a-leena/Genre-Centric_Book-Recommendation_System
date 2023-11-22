@@ -120,16 +120,16 @@ Similarly, there will be several other books B211, B311, and more, of genre G1 w
 Hence, in order to compute the probability of seeing an A1G1 pair in the dataset, I will calculate a Joint Probability, which will be the product of 2 probabilities (assuming the 2 probabilities as being independent of each other) –
 1.	PAG(a,g): Probability of finding a book written by an author a which has the genre g. 
 Let the, 
-•	number of books written by author A1 of genre G1 be C11, and 
-•	total number of books written by author A1 be CA1. 
+- number of books written by author A1 of genre G1 be C11, and 
+- total number of books written by author A1 be CA1. 
 Then,
 <img src="/Equations/eq3.png"></br>
 Therefore, in general - 
 <img src="/Equations/eq4.png"></br></br>
 2.	PGA(g,a): Probability of finding a book of genre G1 which is written by author A1.
 Let the, 
-•	number of books of genre G1 written by author A1 be C11, and
-•	total number of books of genre G1 be CG1.
+- number of books of genre G1 written by author A1 be C11, and
+- total number of books of genre G1 be CG1.
 Then,
 <img src="/Equations/eq5.png"></br>
 Therefore, in general - 
