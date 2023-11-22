@@ -124,19 +124,19 @@ Let the,
 - number of books written by author A1 of genre G1 be C11, and 
 - total number of books written by author A1 be CA1. 
 Then,
-<img src="/Equations/eq3.png"></br>
+  /br><img src="/Equations/eq3.png"></br>
 Therefore, in general - 
-<img src="/Equations/eq4.png"></br></br>
+</br><img src="/Equations/eq4.png"></br></br>
 2.	PGA(g,a): Probability of finding a book of genre G1 which is written by author A1.
 Let the, 
 - number of books of genre G1 written by author A1 be C11, and
 - total number of books of genre G1 be CG1.
 Then,
-<img src="/Equations/eq5.png"></br>
+</br><img src="/Equations/eq5.png"></br>
 Therefore, in general - 
-<img src="/Equations/eq6.png"></br>
+</br><img src="/Equations/eq6.png"></br>
 Thus, the Joint Probability of seeing a particular author-genre pair in the dataset is – 
-<img src="/Equations/eq7.png"></br>
+</br><img src="/Equations/eq7.png"></br>
 <img src="/Equations/eq8.png"></br>
 The weight of a particular author-genre pair will be directly proportional to the rating given to it and will also be directly proportional to the probability of its occurrence, so the overall weight will be a product of these two – 
 <img src="/Equations/eq9.png"></br>
