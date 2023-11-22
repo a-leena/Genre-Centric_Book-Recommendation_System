@@ -110,4 +110,4 @@ This module focuses on creating and analyzing bipartite graphs for 1% and 10% sa
     <td>BW113 = (RC113+ReC113)/2</td>
   </tr>
 </table>
-
+<img src="/Equations/eq1.png"></br>
