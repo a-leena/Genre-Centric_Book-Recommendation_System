@@ -111,5 +111,5 @@ This module focuses on creating and analyzing bipartite graphs for 1% and 10% sa
   </tr>
 </table>
 </br>
-$\Rating(a,g) =  (R111*BW111 + R112*BW112 + R113*BW113)/(BW111 + BW112 + BW113)$
+$\Rating(a,g) =  (R111*BW111 + R112*BW112 + R113*BW113)\over(BW111 + BW112 + BW113)$
 </br>
