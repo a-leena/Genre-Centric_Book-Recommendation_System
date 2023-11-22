@@ -112,5 +112,5 @@ This module focuses on creating and analyzing bipartite graphs for 1% and 10% sa
 </table>
 </br>
 $$ Rating(a,g) =  {(R111*BW111 + R112*BW112 + R113*BW113)} \over {(BW111 + BW112 + BW113)} $$
-$$\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)$$
 </br>
+$`\sqrt{3x-1}+(1+x)^2`$
