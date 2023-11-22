@@ -113,7 +113,7 @@ This module focuses on creating and analyzing bipartite graphs for 1% and 10% sa
 <img src="/Equations/eq1.png"></br>
 Therefore, in general - 
 <img src="/Equations/eq2.png"></br>
-where, **nag** is the number of books written by author a of genre g.
+where, _nag is the number of books written by author a of genre g.
 
 The author A1 would have also written several other books B121, B131, and more, of other genres G2, G3, and so on. 
 Similarly, there will be several other books B211, B311, and more, of genre G1 which have been written by other authors A2, A3, and so on.
