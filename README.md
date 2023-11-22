@@ -123,3 +123,91 @@ Let the,
 •	number of books written by author A1 of genre G1 be C11, and 
 •	total number of books written by author A1 be CA1. 
 Then,
+<img src="/Equations/eq3.png"></br>
+Therefore, in general - 
+<img src="/Equations/eq4.png"></br></br>
+2.	PGA(g,a): Probability of finding a book of genre G1 which is written by author A1.
+Let the, 
+•	number of books of genre G1 written by author A1 be C11, and
+•	total number of books of genre G1 be CG1.
+Then,
+<img src="/Equations/eq5.png"></br>
+Therefore, in general - 
+<img src="/Equations/eq6.png"></br>
+Thus, the Joint Probability of seeing a particular author-genre pair in the dataset is – 
+<img src="/Equations/eq7.png"></br>
+<img src="/Equations/eq8.png"></br>
+The weight of a particular author-genre pair will be directly proportional to the rating given to it and will also be directly proportional to the probability of its occurrence, so the overall weight will be a product of these two – 
+<img src="/Equations/eq9.png"></br>
+<img src="/Equations/eq10.png"></br>
+
+### Author Genre Association Module
+This module performs community detection and analysis on the bipartite graph of 1% sample of the dataset, representing relationships between authors and genres in the dataset. The resulting communities, link weights, and common genres are visualized and saved for further analysis.
+
+1.	Loading, visualizing and analyzing the 1% Sample Bipartite Graph:
+-	The code reads a previously saved 1% sample bipartite graph from a pickle file ("1%_Sample_author_genre_bipartite.gpickle") using NetworkX.
+-	The bipartite graph is visualized using matplotlib. 
+-	Nodes are categorized into genres and authors based on their bipartite attribute.
+-	The unique genres and authors are printed along with their counts.
+
+2.	Projecting Bipartite Graph onto Authors:
+-	The bipartite graph is projected onto the set of authors to create a new graph (`sample_author_projection`).
+-	Degree centrality is calculated for authors.
+
+3.	Community Detection with Louvain Algorithm:
+-	Louvain community detection algorithm is applied to identify communities within the projected graph.
+-	Degree centrality and associated genres are printed for each author.
+
+4.	Visualizing the Author Projection:
+-	The projected graph is visualized using matplotlib, showing connections between authors.
+
+5.	Weight Calculation for Author-Author Edges:
+-	Weights are calculated for each author-author edge in the projected graph based on common genres and their weights in the original bipartite graph.
+
+6.	Creating a Communities Network:
+-	A new graph (`C`) is created to represent the communities, including edges with the computed weights.
+-	The community network is visualized using matplotlib.
+
+7.	Data Analysis for Communities:
+-	Data is collected for each author-author edge in the community network, including community ID, link weight, and common genres.
+-	The data is stored in a DataFrame (`communities_df`) and printed.
+
+8.	Community Filtering and Visualization:
+-	A new community network (`C1`) is created by excluding inter-community edges.
+-	The filtered community network is visualized, and the data is collected and stored in a new DataFrame (`communities_df2`).
+
+9.	Saving Community Data:
+-	The final community data is saved to a CSV file ("Communities_1%_BookData.csv").
+
+### Author-Author Edge Weight Computation
+Let there be authors A1 and A2 in the bipartite graph. A1 is connected to genres G1, G2 and G3, while A2 is connected to genres G1, G3, and G4. Then in the author-projected graph there will be an <A1,A2> edge because of genres G1 and G3. 
+
+Hence, the weight of this edge in the projected network is defined as such, 
+<img src="/Equations/eq11.png"></br>
+Therefore, in general – 
+<img src="/Equations/eq12.png"></br>
+where, 
+- n is the number of common genres between authors x and y, and
+- W(x,Gk) is the weight of the edge between author x and genre Gk in the bipartite graph, similarly W(y,Gk) is the weight of the edge between author y and genre Gk in the bipartite graph.
+
+### Recommendation Module
+This module provides an interactive book recommendation system based on the user's input, leveraging community data from previously analyzed graph. It allows the user to interactively search for a book and receive recommendations for similar books. The recommendations are influenced by the community structure, suggesting books by authors within the same community as the selected book's author.
+1.	Loading the Dataset and Creating a Sample:
+-	The code loads a processed book dataset from "Processed_BookData.csv" using pandas.
+-	A random 1% sample of the dataset (`df_sample`) is created for testing.
+2.	Loading Communities Data:
+-	The code loads a CSV file containing community data ("Communities_1%_BookData.csv") that was previously generated.
+3.	Interactive Book Search:
+-	The user is presented with a list of books to choose from (output of `showBooks()` function).
+-	The user is prompted to enter a book title and the number of book recommendations to get.
+4.	SearchBook Function:
+-	The user's input (book title and number of recommendations) is taken.
+-	The details of the selected book are displayed, including author, number of pages, rating, rating count, and genres.
+-	The function `get_all_authors` retrieves other authors from the same community as the selected book's author.
+-	The function `get_n_books` provides book recommendations based on the authors obtained from the community.
+-	The recommendations are displayed, including the book title and author.
+5.	User Interaction:
+-	The user can input the book title and the number of recommendations they want to receive.
+
+Output:
+-	The code outputs details about the selected book and a list of recommended books along with their authors.
