@@ -113,4 +113,4 @@ This module focuses on creating and analyzing bipartite graphs for 1% and 10% sa
 </br>
 $$ Rating(a,g) =  {(R111*BW111 + R112*BW112 + R113*BW113)} \over {(BW111 + BW112 + BW113)} $$
 </br>
-$`\sqrt{3x-1}+(1+x)^2`$
+$\sqrt{3x-1}+(1+x)^2$
